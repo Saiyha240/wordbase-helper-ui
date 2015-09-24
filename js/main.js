@@ -10,10 +10,21 @@ function Point( xCoor, yCoor ){
     this.yCoor = yCoor;
 }
 
+function Word( word, letters ){
+    this.word = word;
+    this.letters = letters;
+}
+
 function Letter( letter, xCoor, yCoor ){
     this.letter = letter;
     this.xCoor = xCoor;
     this.yCoor = yCoor;
+}
+
+function resetButtonAction(){
+    $("#resetBtn").click(function(){
+        $("#wb-table-area td").removeClass('m-occupied m-opponent m-highlight');
+    });
 }
 
 function editButtonAction(){
@@ -92,29 +103,76 @@ function findMarkedCells(){
     return rowObjects;
 }
 
+function wordListBehavior(){
+    $( "#wb-word-list .list-group-item" ).unbind().each(function(){
+        $(this).click(function(){
+            var wordObj = $(this).data('word'),
+                wbTable = $("#wb-table-area");
+
+            wbTable.find('td').removeClass('m-highlight');
+
+            $.each( wordObj.letters, function( index, item ){
+                console.log( wbTable.find('tr').eq( item.y ).find('td').eq( item.x ).addClass('m-highlight') );
+            });
+
+        });
+    });
+}
+
 function searchButtonAction(){
-    $("#search").click( function(){
+    $("#searchBtn").click( function(){
         var wbData;
 
         wbData = new WordBaseData( $('[name=tableRows]').val(), $('[name=tableColumns]').val(), findMarkedCells(), concatCellStrings() );
-        console.log(wbData);
+        //Post data to server
+        $.getJSON('data/response.json', function(data){
+            $.each( data, function( index, item ){
+                $("#wb-word-list").append(
+                    $("<div>").addClass('list-group-item')
+                              .data('word', new Word( item.word, item.letters ))
+                              .html(item.word)
+                );
+            });
+            wordListBehavior();
+        });
     });
 }
 
 function tableCellBehavior( wbTable ){
-    wbTable.find( 'td' ).click(function(){
-        if( !$(this).parents( wbTable ).hasClass('edit-mode') ){
-            var control = $('[name=highlightControl]:checked').val();
+    var isMouseDown = false,
+        isHighlighted, control;
 
-            $(this).removeClass('m-occupied m-opponent');
+    wbTable.find( 'td' ).mousedown(function () {
+        if( wbTable.hasClass('edit-mode') ) return;
 
-            if( control === "user" ){
-                $(this).toggleClass( 'm-occupied' );
-            }else{
-                $(this).toggleClass( 'm-opponent' );
-            }
-            
+        isMouseDown = true;
+        control = $('[name=highlightControl]:checked').val();
+
+        if( control === "user" ){
+            $(this).removeClass('m-opponent').toggleClass( 'm-occupied' );
+        }else{
+            $(this).removeClass('m-occupied').toggleClass( 'm-opponent' );
         }
+
+        isHighlighted = $(this).hasClass("m-occupied m-opponent");
+
+        return false; // prevent text selection
+    }).mouseover(function () {
+        if( wbTable.hasClass('edit-mode') ) return;
+
+        control = $('[name=highlightControl]:checked').val();
+
+        if ( isMouseDown ) {
+            if( control === "user" ){
+                $(this).removeClass('m-opponent').toggleClass( 'm-occupied' );
+            }else{
+                $(this).removeClass('m-occupied').toggleClass( 'm-opponent' );
+            }
+        }
+    });
+
+    $(document).mouseup(function () {
+        isMouseDown = false;
     });
 }
 function initTableBehavior(){
@@ -126,6 +184,7 @@ function initTableBehavior(){
 function initButtons(){
     editButtonAction();
     searchButtonAction();
+    resetButtonAction();
 }
 
 $(function(){

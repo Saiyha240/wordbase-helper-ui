@@ -1,0 +1,22 @@
+[
+  {
+    "word": "Hello",
+    "letters": [
+      { "letter": "H", "x": "4", "y": "4" },
+      { "letter": "e", "x": "5", "y": "5" },
+      { "letter": "l", "x": "6", "y": "6" },
+      { "letter": "l", "x": "7", "y": "7" },
+      { "letter": "o", "x": "8", "y": "8" }
+    ] 
+  },
+  {
+    "word": "Hello",
+    "letters": [
+      { "letter": "H", "x": "4", "y": "0" },
+      { "letter": "e", "x": "5", "y": "0" },
+      { "letter": "l", "x": "6", "y": "0" },
+      { "letter": "l", "x": "6", "y": "1" },
+      { "letter": "o", "x": "5", "y": "2" }
+    ] 
+  }
+]
