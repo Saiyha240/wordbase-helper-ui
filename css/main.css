@@ -13,7 +13,8 @@ body { padding-top: 50px; padding-bottom: 20px; }
 .m-opponent{background-color: #d9534f;}
 .m-highlight{background-color: #5cb85c;}
 
-
+.m-occupied.m-highlight{background-color: #46968E;}
+.m-opponent.m-highlight{background-color: #7E6888;}
 
 
 

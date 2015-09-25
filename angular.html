@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/vendor/angular.min.js"></script>
+    <script src="js/vendor/angular-route.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body ng-app="WordBaserApp" ngStringDi>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">WordBaser</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <div class="container main">
+    <div class="row">
+    <div class="col-sm-7">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">WordBase Table</h3>
+            </div>
+            <div id="wb-table-area" class="panel-body" ng-controller="WBTableCtrl">
+                <table class="table table-bordered">
+                    <tbody>
+                    <tr ng-repeat="i in getRows() track by $index">
+                        <td cell ng-repeat="c in getColumns() track by $index">
+                            <input ng-show="editMode" type="text" class="form-control"/>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-5">
+        <div class="panel panel-primary" ng-controller="ButtonActionCtrl">
+            <div class="panel-heading">
+                <h3 class="panel-title">Actions</h3>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal" action="">
+                    <div class="">
+                        <!-- <label class="col-sm-4" for="tableColumns"># of Columns: </label> -->
+                        <div class="col-sm-8">
+                            <input id="tableColumns" type="hidden" name="tableColumns" value="10" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="">
+                        <!-- <label class="col-sm-4" for="tableRows"># of Rows: </label> -->
+                        <div class="col-sm-8">
+                            <input id="tableRows" type="hidden" name="tableRows" value="13" class="form-control"/>
+                        </div>
+                    </div>
+                </form>
+                <div class="form-group">
+                    <div class="btn-group btn-group-justified" role="group">
+                        <a ng-click="editMode()" id="editBtn" class="btn btn-primary">{{ editModeButtonText }}</a>
+                        <a ng-click="editMode()" id="quickFillBtn" class="btn btn-primary">Quick Fill Mode</a>
+                        <a ng-click="editMode()" id="searchBtn" class="btn btn-primary">Search</a>
+                    </div>
+                </div>
+
+                <div class="btn-group btn-group-justified" role="group">
+                    <a id="resetBtn" class="btn btn-primary">Reset</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title">Highlight Control</div>
+            </div>
+            <div class="panel-body">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="highlightControl" id="controlUser" value="user" checked>
+                        <span class="label label-primary">User</span>
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="highlightControl" id="controlOpponent" value="opponent">
+                        <span class="label label-danger">Opponent</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title">Word list</div>
+            </div>
+            <ul id="wb-word-list" class="list-group">
+            </ul>
+        </div>
+    </div>
+    </div>
+    </div> <!-- /container -->
+    <div ng-controller="myCtrl">
+
+        First Name: <input type="text" ng-model="firstName"><br>
+        Last Name: <input type="text" ng-model="lastName"><br>
+        <br>
+        Full Name: {{firstName + " " + lastName}}
+
+    </div>
+</body>
+</html>
