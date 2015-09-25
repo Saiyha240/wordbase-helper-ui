@@ -124,17 +124,29 @@ function searchButtonAction(){
         var wbData;
 
         wbData = new WordBaseData( $('[name=tableRows]').val(), $('[name=tableColumns]').val(), findMarkedCells(), concatCellStrings() );
-        //Post data to server
-        $.getJSON('data/response.json', function(data){
-            $.each( data, function( index, item ){
-                $("#wb-word-list").append(
-                    $("<div>").addClass('list-group-item')
-                              .data('word', new Word( item.word, item.letters ))
-                              .html(item.word)
-                );
-            });
-            wordListBehavior();
+
+        $.post( $('[name=sse]').val(), function( data ){
+            console.log(data);
+            //$.each( data, function( index, item ){
+            //    $("#wb-word-list").append(
+            //        $("<div>").addClass('list-group-item')
+            //            .data('word', new Word( item.word, item.letters ))
+            //            .html(item.word)
+            //    );
+            //});
+            //wordListBehavior();
         });
+
+        //$.getJSON('data/response.json', function(data){
+        //    $.each( data, function( index, item ){
+        //        $("#wb-word-list").append(
+        //            $("<div>").addClass('list-group-item')
+        //                      .data('word', new Word( item.word, item.letters ))
+        //                      .html(item.word)
+        //        );
+        //    });
+        //    wordListBehavior();
+        //});
     });
 }
 
