@@ -63,14 +63,15 @@ app.factory('WBTableState', ['$rootScope', function( $rootScope ){
     };
 }]);
 
-app.directive('cell', [ '$document', 'WBTableState', 'Letter', function( $document, WBTableState, Letter ) {
+app.directive('cell', [ 'WBTableState', 'Letter', function( WBTableState, Letter ) {
     return {
         restrict:'A',
         link: function ( scope, element ) {
-            scope.letter = new Letter( "A", scope.$index, scope.$parent.$index );
+            scope.letter = new Letter( "", scope.$index, scope.$parent.$index );
             scope.isEditMode = WBTableState.isEditMode;
+            scope.span = element.find('span');
 
-            element.on('mousedown', function(){
+            scope.span.on('mousedown', function(){
                 if( WBTableState.isEditMode ) return;
 
                 WBTableState.setIsMouseDown(true);
@@ -80,7 +81,7 @@ app.directive('cell', [ '$document', 'WBTableState', 'Letter', function( $docume
                 return false;
             });
 
-            element.on('mouseover', function(){
+            scope.span.on('mouseover', function(){
                 if( WBTableState.isEditMode ) return;
 
                 if( WBTableState.isMouseDown ){
@@ -88,7 +89,7 @@ app.directive('cell', [ '$document', 'WBTableState', 'Letter', function( $docume
                 }
             });
 
-            element.on('mouseup', function(){
+            scope.span.on('mouseup', function(){
                 WBTableState.setIsMouseDown(false);
             });
 
