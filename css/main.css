@@ -7,6 +7,7 @@ body { padding-top: 50px; padding-bottom: 20px; }
 .container.main{padding-top: 20px;}
 
 #wb-table-area td{cursor: pointer; height: 45px; vertical-align: middle; text-align: center;}
+#wb-table-area td input{text-align: center;}
 
 [class^=m-]{color: #fff;}
 .m-occupied{background-color: #337ab7;}

@@ -1,10 +1,5 @@
 var app = angular.module('WordBaserApp', []);
 
-app.controller('myCtrl', [ '$scope', function( $scope ){
-    $scope.firstName= "John";
-    $scope.lastName= "Doe";
-}]);
-
 app.controller('WBTableCtrl', [ '$scope', 'WBTableState', function( $scope, WBTableState ){
     $scope.rowCount = 13;
     $scope.colCount = 10;
@@ -23,7 +18,7 @@ app.controller('WBTableCtrl', [ '$scope', 'WBTableState', function( $scope, WBTa
     });
 }]);
 
-app.controller('ButtonActionCtrl', [ '$scope', 'WBTableState', function( $scope, WBTableState ){
+app.controller('ButtonActionCtrl', [ '$scope', 'WBTableState', 'Word', function( $scope, WBTableState, Word ){
     $scope.editModeButtonText = "Edit Mode";
 
     $scope.editMode = function(){
@@ -33,6 +28,11 @@ app.controller('ButtonActionCtrl', [ '$scope', 'WBTableState', function( $scope,
             $scope.editModeButtonText = "Edit Mode";
         }
     };
+
+    $scope.resetCellState = function(){
+        WBTableState.resetCellState();
+    };
+
 }]);
 
 app.factory('WBTableState', ['$rootScope', function( $rootScope ){
@@ -47,6 +47,10 @@ app.factory('WBTableState', ['$rootScope', function( $rootScope ){
             return this.isEditMode;
         },
 
+        resetCellState: function(){
+            $rootScope.$broadcast( 'WBTableResetCellState' );
+        },
+
         setIsMouseDown: function(boolean){
             this.isMouseDown = boolean;
 
@@ -59,10 +63,13 @@ app.factory('WBTableState', ['$rootScope', function( $rootScope ){
     };
 }]);
 
-app.directive('cell', [ '$document', 'WBTableState', function( $document, WBTableState ) {
+app.directive('cell', [ '$document', 'WBTableState', 'Letter', function( $document, WBTableState, Letter ) {
     return {
         restrict:'A',
         link: function ( scope, element ) {
+            scope.letter = new Letter( "A", scope.$index, scope.$parent.$index );
+            scope.isEditMode = WBTableState.isEditMode;
+
             element.on('mousedown', function(){
                 if( WBTableState.isEditMode ) return;
 
@@ -84,6 +91,39 @@ app.directive('cell', [ '$document', 'WBTableState', function( $document, WBTabl
             element.on('mouseup', function(){
                 WBTableState.setIsMouseDown(false);
             });
+
+            scope.$on('WBTableResetCellState', function(){
+               element.removeClass('m-occupied m-highlight m-opponent');
+            });
+
+            scope.$on( 'WBTableStateChange', function(){
+                scope.isEditMode = WBTableState.isEditMode;
+            });
         }
     };
 }]);
+
+app.factory('Word', ['Letter', function( Letter ){
+    return function( word, letters ){
+        var myLetters = [];
+
+        angular.forEach( letters, function( key, value ){
+            myLetters.push( new Letter( key.letter, key.x, key.y ) )
+        })
+
+        return {
+            word: word,
+            letters: myLetters
+        }
+    }
+}]);
+
+app.factory('Letter', function(){
+   return function( letter, xcoor, ycoor ){
+       return {
+           letter: letter,
+           xcoor: xcoor,
+           ycoor: ycoor
+       }
+   }
+});
