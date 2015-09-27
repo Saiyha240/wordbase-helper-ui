@@ -126,7 +126,7 @@ function searchButtonAction(){
         wbData = new WordBaseData( $('[name=tableRows]').val(), $('[name=tableColumns]').val(), findMarkedCells(), "ectrygamylkiehrantghtfpdodeistosfauidcpicetbroramerilgoemseraoncnutfgodecisgytasilotneirnclrfmarmscenatopmseliyliaryecsnwhlplrptum" );
         $.post(
             'http://apps-fxperiments.rhcloud.com/apps/wordbaser/crawl',
-            JSON.stringify(wbData),
+            wbData,
             function(data){
                 console.log(data)
             },
@@ -136,7 +136,10 @@ function searchButtonAction(){
             url: encodeURI('http://apps-fxperiments.rhcloud.com/apps/wordbaser/crawl'),
             type: 'POST',
             data: JSON.stringify(wbData),
-            contentType: 'application/json',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
             success: function () { },
             error: function () { }
         });
