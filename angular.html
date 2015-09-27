@@ -16,6 +16,7 @@
     <script src="js/vendor/angular-route.min.js"></script>
     <script src="js/vendor/smart-table.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
 <body ng-app="WordBaserApp" ngStringDi>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -151,29 +152,33 @@
                     <div class="panel-heading">
                         <div class="panel-title">Word list</div>
                     </div>
+                    <div class="panel-body word-list-panel">
+                        <table st-table="displayedWords" st-safe-src="words" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th st-search st-sort="word">Word</th>
+                                <th st-sort="getters.length">Length</th>
+                                <th st-sort="getters.furthest">Furthest</th>
+                            </tr>
+                            <tr>
+                                <th colspan="5"><input st-search="" class="form-control" placeholder="Search Word..." type="text"/></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr st-select-row="row" ng-click="showWord(word)" ng-repeat="word in displayedWords | startsWithLetter:letterFilterKey track by $index">
+                                    <td>{{word.word}}</td>
+                                    <td>{{word.word.length}}</td>
+                                    <td>{{word.furthest}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-                    <table st-table="displayedWords" st-safe-src="words" class="table table-striped">
-                        <thead>
-                        <tr>
-                            <th st-search st-sort="word">Word</th>
-                            <th st-sort="getters.length">Length</th>
-                            <th st-sort="getters.furthest">Furthest</th>
-                        </tr>
-                        <tr>
-                            <th colspan="5"><input st-search="" class="form-control" placeholder="Search Word..." type="text"/></th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr st-select-row="row" ng-click="showWord(word)" ng-repeat="word in displayedWords | startsWithLetter:letterFilterKey track by $index">
-                            <td>{{word.word}}</td>
-                            <td>{{word.word.length}}</td>
-                            <td>{{word.furthest}}</td>
-                        </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </div>
     </div> <!-- /container -->
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

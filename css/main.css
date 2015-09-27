@@ -19,11 +19,7 @@ body { padding-top: 50px; padding-bottom: 20px; }
 .m-occupied.m-highlight{background-color: #46968E;}
 .m-opponent.m-highlight{background-color: #7E6888;}
 
-
-
-
-
-
+.word-list-panel{ height: 400px; overflow-y: scroll;}
 
 
 
