@@ -129,8 +129,7 @@ function searchButtonAction(){
             wbData,
             function(data){
                 console.log(data)
-            },
-            'json'
+            }
         );
         $.ajax({
             url: encodeURI('http://apps-fxperiments.rhcloud.com/apps/wordbaser/crawl'),
