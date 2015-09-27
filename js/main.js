@@ -124,23 +124,15 @@ function searchButtonAction(){
         var wbData;
 
         wbData = new WordBaseData( $('[name=tableRows]').val(), $('[name=tableColumns]').val(), findMarkedCells(), "ectrygamylkiehrantghtfpdodeistosfauidcpicetbroramerilgoemseraoncnutfgodecisgytasilotneirnclrfmarmscenatopmseliyliaryecsnwhlplrptum" );
-        $.post(
-            'http://apps-fxperiments.rhcloud.com/apps/wordbaser/crawl',
-            wbData,
-            function(data){
-                console.log(data)
-            }
-        );
+        console.log(wbData);
         $.ajax({
             url: encodeURI('http://apps-fxperiments.rhcloud.com/apps/wordbaser/crawl'),
             type: 'POST',
             data: JSON.stringify(wbData),
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            success: function () { },
-            error: function () { }
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            success: function (data) { console.log(data) },
+            error: function (data) { console.log(data) }
         });
 
         //headers: {
