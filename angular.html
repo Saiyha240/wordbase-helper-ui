@@ -78,7 +78,7 @@
                             <div class="btn-group btn-group-justified" role="group">
                                 <a ng-click="editMode()" id="editBtn" class="btn btn-primary">{{ editModeButtonText }}</a>
                                 <a ng-click="editMode()" id="quickFillBtn" class="btn btn-primary">Quick Fill Mode</a>
-                                <a ng-click="" id="searchBtn" class="btn btn-primary">Search</a>
+                                <a ng-click="search()" id="searchBtn" class="btn btn-primary">Search</a>
                             </div>
                         </div>
 
@@ -88,30 +88,33 @@
 
                     </div>
                 </div>
-                <div class="panel panel-primary">
+                <div class="panel panel-primary" ng-controller="HighlightCtrl">
                     <div class="panel-heading">
                         <div class="panel-title">Highlight Control</div>
                     </div>
                     <div class="panel-body">
                         <div class="radio">
                             <label>
-                                <input type="radio" name="highlightControl" id="controlUser" value="user" checked>
+                                <input ng-model="highlight" type="radio" name="highlightControl" id="controlUser" value="user" checked>
                                 <span class="label label-primary">User</span>
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="highlightControl" id="controlOpponent" value="opponent">
+                                <input ng-model="highlight" type="radio" name="highlightControl" id="controlOpponent" value="opponent">
                                 <span class="label label-danger">Opponent</span>
                             </label>
                         </div>
                     </div>
                 </div>
-                <div class="panel panel-primary">
+                <div class="panel panel-primary" ng-controller="WordListCtrl">
                     <div class="panel-heading">
                         <div class="panel-title">Word list</div>
                     </div>
                     <ul id="wb-word-list" class="list-group">
+                        <div ng-click="showWord(word)" ng-repeat="word in words track by word.word" class="list-group-item">
+                            {{word.word}}
+                        </div>
                     </ul>
                 </div>
             </div>

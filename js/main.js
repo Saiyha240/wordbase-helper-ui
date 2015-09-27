@@ -123,20 +123,27 @@ function searchButtonAction(){
     $("#searchBtn").click( function(){
         var wbData;
 
-        wbData = new WordBaseData( $('[name=tableRows]').val(), $('[name=tableColumns]').val(), findMarkedCells(), concatCellStrings() );
-
-        $.post( $('[name=sse]').val(), function( data ){
-            console.log(data);
-            //$.each( data, function( index, item ){
-            //    $("#wb-word-list").append(
-            //        $("<div>").addClass('list-group-item')
-            //            .data('word', new Word( item.word, item.letters ))
-            //            .html(item.word)
-            //    );
-            //});
-            //wordListBehavior();
+        wbData = new WordBaseData( $('[name=tableRows]').val(), $('[name=tableColumns]').val(), findMarkedCells(), "ectrygamylkiehrantghtfpdodeistosfauidcpicetbroramerilgoemseraoncnutfgodecisgytasilotneirnclrfmarmscenatopmseliyliaryecsnwhlplrptum" );
+        $.post(
+            'http://apps-fxperiments.rhcloud.com/apps/wordbaser/crawl',
+            JSON.stringify(wbData),
+            function(data){
+                console.log(data)
+            },
+            'json'
+        );
+        $.ajax({
+            url: encodeURI('http://apps-fxperiments.rhcloud.com/apps/wordbaser/crawl'),
+            type: 'POST',
+            data: JSON.stringify(wbData),
+            contentType: 'application/json',
+            success: function () { },
+            error: function () { }
         });
 
+        //headers: {
+        //    'Content-Type':'application/json'
+        //},
         //$.getJSON('data/response.json', function(data){
         //    $.each( data, function( index, item ){
         //        $("#wb-word-list").append(
