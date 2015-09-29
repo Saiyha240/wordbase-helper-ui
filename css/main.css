@@ -7,7 +7,7 @@ body { padding-top: 50px; padding-bottom: 20px; }
 .container.main{padding-top: 20px;}
 
 #wb-table-area td{cursor: pointer; height: 45px; padding:0; vertical-align: middle; text-align: center;}
-#wb-table-area td input{text-align: center;}
+#wb-table-area td input{text-align: center; padding: 5px;}
 #wb-table-area td span{display: flex; align-items:center; justify-content:center; text-align:center; height: 100%;}
 #wb-table-area td *{ -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
 

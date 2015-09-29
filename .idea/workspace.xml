@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="38b3ad69-63fe-43a3-b467-b25a3749a593" name="Default" comment="" />
+    <list default="true" id="38b3ad69-63fe-43a3-b467-b25a3749a593" name="Default" comment="Fix padding of input for mobile devices">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="dev_wordbase.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -24,7 +29,7 @@
     <favorites_list name="dev_wordbase" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.49188516">
+    <splitter split-orientation="horizontal" split-proportion="0.3888889">
       <split-first>
         <leaf>
           <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
@@ -43,7 +48,7 @@
           <file leaf-file-name="angular.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/angular.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.30977622" vertical-offset="1697" max-vertical-offset="3780">
+                <state vertical-scroll-proportion="0.48975793" vertical-offset="1697" max-vertical-offset="3780">
                   <caret line="98" column="72" selection-start-line="98" selection-start-column="72" selection-end-line="98" selection-end-column="72" />
                   <folding />
                 </state>
@@ -54,26 +59,26 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+          <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/css/main.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="200" max-vertical-offset="660">
-                  <caret line="10" column="82" selection-start-line="10" selection-start-column="82" selection-end-line="10" selection-end-column="82" />
+                <state vertical-scroll-proportion="0.33333334" vertical-offset="22" max-vertical-offset="660">
+                  <caret line="11" column="77" selection-start-line="11" selection-start-column="77" selection-end-line="11" selection-end-column="77" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.2869757" vertical-offset="0" max-vertical-offset="4720">
-                  <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="3814" max-vertical-offset="4720">
+                  <caret line="202" column="24" selection-start-line="202" selection-start-column="24" selection-end-line="202" selection-end-column="24" />
                   <folding>
-                    <element signature="e#7185#8379#0" expanded="false" />
-                    <element signature="e#8418#8613#0" expanded="false" />
-                    <element signature="e#8697#9448#0" expanded="false" />
-                    <element signature="e#9485#9609#0" expanded="false" />
+                    <element signature="e#7221#8415#0" expanded="false" />
+                    <element signature="e#8454#8649#0" expanded="false" />
+                    <element signature="e#8733#9484#0" expanded="false" />
+                    <element signature="e#9521#9645#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -113,6 +118,9 @@
       <command text="git push" />
     </commandsHistory>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
   </component>
@@ -123,7 +131,7 @@
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -235,6 +243,22 @@
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="FullScreen" value="false" />
     <property name="SearchEverywhereHistoryKey" value="mainjs&#9;FILE&#9;file://C:/Program Files/Wamp/www/dev_wordbase/js/main.js&#10;maincss&#9;FILE&#9;file://C:/Program Files/Wamp/www/dev_wordbase/css/main.css" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="304" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="304" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="304" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="978" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="304" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="303" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="304" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="979" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -290,10 +314,11 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.165625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32946146" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -324,6 +349,9 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <confirmMoveToFailedCommit value="1" />
+    <MESSAGE value="Fix padding of input for mobile devices" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix padding of input for mobile devices" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -343,10 +371,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3160">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#7185#8379#0" expanded="false" />
-            <element signature="e#8418#8613#0" expanded="false" />
-            <element signature="e#8697#9448#0" expanded="false" />
-            <element signature="e#9485#9609#0" expanded="false" />
+            <element signature="e#7221#8415#0" expanded="false" />
+            <element signature="e#8454#8649#0" expanded="false" />
+            <element signature="e#8733#9484#0" expanded="false" />
+            <element signature="e#9521#9645#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -399,10 +427,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4520">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#7185#8379#0" expanded="false" />
-            <element signature="e#8418#8613#0" expanded="false" />
-            <element signature="e#8697#9448#0" expanded="false" />
-            <element signature="e#9485#9609#0" expanded="false" />
+            <element signature="e#7221#8415#0" expanded="false" />
+            <element signature="e#8454#8649#0" expanded="false" />
+            <element signature="e#8733#9484#0" expanded="false" />
+            <element signature="e#9521#9645#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -455,10 +483,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2900">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#7185#8379#0" expanded="false" />
-            <element signature="e#8418#8613#0" expanded="false" />
-            <element signature="e#8697#9448#0" expanded="false" />
-            <element signature="e#9485#9609#0" expanded="false" />
+            <element signature="e#7221#8415#0" expanded="false" />
+            <element signature="e#8454#8649#0" expanded="false" />
+            <element signature="e#8733#9484#0" expanded="false" />
+            <element signature="e#9521#9645#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -511,10 +539,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1560">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#7185#8379#0" expanded="false" />
-            <element signature="e#8418#8613#0" expanded="false" />
-            <element signature="e#8697#9448#0" expanded="false" />
-            <element signature="e#9485#9609#0" expanded="false" />
+            <element signature="e#7221#8415#0" expanded="false" />
+            <element signature="e#8454#8649#0" expanded="false" />
+            <element signature="e#8733#9484#0" expanded="false" />
+            <element signature="e#9521#9645#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -559,10 +587,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2700">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#7185#8379#0" expanded="false" />
-            <element signature="e#8418#8613#0" expanded="false" />
-            <element signature="e#8697#9448#0" expanded="false" />
-            <element signature="e#9485#9609#0" expanded="false" />
+            <element signature="e#7221#8415#0" expanded="false" />
+            <element signature="e#8454#8649#0" expanded="false" />
+            <element signature="e#8733#9484#0" expanded="false" />
+            <element signature="e#9521#9645#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -607,10 +635,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2680">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#7185#8379#0" expanded="false" />
-            <element signature="e#8418#8613#0" expanded="false" />
-            <element signature="e#8697#9448#0" expanded="false" />
-            <element signature="e#9485#9609#0" expanded="false" />
+            <element signature="e#7221#8415#0" expanded="false" />
+            <element signature="e#8454#8649#0" expanded="false" />
+            <element signature="e#8733#9484#0" expanded="false" />
+            <element signature="e#9521#9645#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -655,10 +683,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="961" max-vertical-offset="1880">
           <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
           <folding>
-            <element signature="e#7185#8379#0" expanded="false" />
-            <element signature="e#8418#8613#0" expanded="false" />
-            <element signature="e#8697#9448#0" expanded="false" />
-            <element signature="e#9485#9609#0" expanded="false" />
+            <element signature="e#7221#8415#0" expanded="false" />
+            <element signature="e#8454#8649#0" expanded="false" />
+            <element signature="e#8733#9484#0" expanded="false" />
+            <element signature="e#9521#9645#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -703,10 +731,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1760">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#7185#8379#0" expanded="false" />
-            <element signature="e#8418#8613#0" expanded="false" />
-            <element signature="e#8697#9448#0" expanded="false" />
-            <element signature="e#9485#9609#0" expanded="false" />
+            <element signature="e#7221#8415#0" expanded="false" />
+            <element signature="e#8454#8649#0" expanded="false" />
+            <element signature="e#8733#9484#0" expanded="false" />
+            <element signature="e#9521#9645#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -734,14 +762,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="201" max-vertical-offset="1200">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="740">
-          <caret line="10" column="82" selection-start-line="10" selection-start-column="82" selection-end-line="10" selection-end-column="82" />
           <folding />
         </state>
       </provider>
@@ -797,7 +817,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/angular.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30977622" vertical-offset="1697" max-vertical-offset="3780">
+        <state vertical-scroll-proportion="0.48975793" vertical-offset="1697" max-vertical-offset="3780">
           <caret line="98" column="72" selection-start-line="98" selection-start-column="72" selection-end-line="98" selection-end-column="72" />
           <folding />
         </state>
@@ -805,14 +825,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2869757" vertical-offset="0" max-vertical-offset="4720">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3814" max-vertical-offset="4720">
+          <caret line="202" column="24" selection-start-line="202" selection-start-column="24" selection-end-line="202" selection-end-column="24" />
           <folding>
-            <element signature="e#7185#8379#0" expanded="false" />
-            <element signature="e#8418#8613#0" expanded="false" />
-            <element signature="e#8697#9448#0" expanded="false" />
-            <element signature="e#9485#9609#0" expanded="false" />
+            <element signature="e#7221#8415#0" expanded="false" />
+            <element signature="e#8454#8649#0" expanded="false" />
+            <element signature="e#8733#9484#0" expanded="false" />
+            <element signature="e#9521#9645#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="22" max-vertical-offset="660">
+          <caret line="11" column="77" selection-start-line="11" selection-start-column="77" selection-end-line="11" selection-end-column="77" />
+          <folding />
         </state>
       </provider>
     </entry>
