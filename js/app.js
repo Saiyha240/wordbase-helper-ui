@@ -140,20 +140,27 @@ app.directive('cell', [ '$rootScope', 'WBTableState', 'Letter', 'WBTable', funct
 
             WBTable.addCell( { element: element, letter: scope.letter } );
 
+            element.find('input').on('keyup', function(e){
+                if( element.next().length == 0 ){
+                    element.parent().next().find('input')[0].focus();
+                }else{
+                    element.next().find('input')[0].focus();
+                }
+
+            });
+
             scope.span.on('mousedown', function(){
                 if( WBTableState.isEditMode ) return;
 
                 WBTableState.setIsMouseDown(true);
 
-                if( scope.currentHighlight === "user" ){
+                if( WBTableState.currentHighlight == "word"){
+                    $rootScope.$broadcast( 'WordListFindWord', scope.letter );
+                    scope.$apply();
+                }else if( scope.currentHighlight === "user" ){
                     element.removeClass('m-opponent').toggleClass('m-occupied');
                 }else{
                     element.removeClass('m-occupied').toggleClass('m-opponent');
-                }
-
-                if( WBTableState.currentHighlight == "word"){
-                    console.log(scope.letter);
-                    $rootScope.$broadcast( 'WordListFindWord', scope.letter );
                 }
 
                 return false;
