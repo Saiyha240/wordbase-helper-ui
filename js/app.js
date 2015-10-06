@@ -85,8 +85,9 @@ app.controller('WordListCtrl', [ '$scope', '$http', '$filter', 'WBTableState', '
             cellString += cell.letter.letter;
         });
 
-        $http.post('http://apps-fxperiments.rhcloud.com/apps/wordbaser/crawl', angular.toJson( {rowCount:"13", colCount:"10", markedMap: markedMap, cellsString: cellString} ) ).
+        $http.post('http://apps-fxperiments.rhcloud.com/apps/wordbaser/crawl', angular.toJson( {rowCount:"13", colCount:"10", markedMap: markedMap, cellsString: angular.lowercase(cellString)} ) ).
         then(function(response) {
+            $scope.words = [];
             angular.forEach( response.data, function( obj ){
                 $scope.words.push( new Word( obj.word, obj.letters ) );
             });
@@ -111,19 +112,11 @@ app.filter('startsWithLetter', ['WBTableState', function ( WBTableState ) {
     return function ( items, letterFilterKey ) {
 
         if( WBTableState.currentHighlight == "word" && letterFilterKey != "" ){
-            var filtered = [];
-
-            angular.forEach( items, function( word ){
-                var hasLetter = false;
-                angular.forEach( word.letters, function( letter ){
-                    if( !hasLetter && letter.xCoor == letterFilterKey.xCoor && letter.yCoor == letterFilterKey.yCoor ){
-                        hasLetter = true;
-                    }
+            return items.filter(function(word){
+                return word.letters.some(function(letter){
+                    return letter.xCoor == letterFilterKey.xCoor && letter.yCoor == letterFilterKey.yCoor
                 });
-                if( hasLetter ) filtered.push( word );
             })
-
-            return filtered;
         }
         return items;
     };
@@ -203,7 +196,7 @@ app.directive('cell', [ '$rootScope', 'WBTableState', 'Letter', 'WBTable', funct
                 if( element.hasClass('done') ) return;
                 //angular.equals( scope.letter, letter )
                 //scope.letter.xCoor == letter.xCoor && scope.letter.yCoor == letter.yCoor
-                if( angular.equals( scope.letter, letter ) ){
+                if( scope.letter.xCoor == letter.xCoor && scope.letter.yCoor == letter.yCoor ){
                     element.addClass('m-highlight done');
                 }else{
                     element.removeClass('m-highlight');
@@ -279,7 +272,7 @@ app.factory( 'Word', ['Letter', 'WBTableState', function( Letter, WBTableState )
             isPositionTop = WBTableState.currentPosition == "top",
             furthest = isPositionTop ? 0 : 12;
 
-        angular.forEach( letters, function( letter  ){
+        angular.forEach( letters, function( letter ){
             if( isPositionTop ){
                 furthest = furthest > parseInt( letter.y, 10 ) ? furthest : parseInt( letter.y, 10 );
             }else{
@@ -305,6 +298,7 @@ app.factory( 'Point', function(){
         }
     }
 });
+
 app.factory( 'Letter', function(){
    return function( letter, xcoor, ycoor ){
        return {
