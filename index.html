@@ -157,15 +157,15 @@
                             <thead>
                             <tr>
                                 <th st-search st-sort="word">Word</th>
-                                <th st-sort="getters.length">Length</th>
-                                <th st-sort="getters.furthest">Furthest</th>
+                                <th st-sort="word.length">Length</th>
+                                <th st-sort="furthest">Furthest</th>
                             </tr>
                             <tr>
                                 <th colspan="5"><input st-search="" class="form-control" placeholder="Search Word..." type="text"/></th>
                             </tr>
                             </thead>
                             <tbody>
-                                <tr st-select-row="row" ng-click="showWord(word)" ng-repeat="word in displayedWords | orderBy: getters.furthest : true | startsWithLetter:letterFilterKey track by $index">
+                                <tr st-select-row="row" ng-click="showWord(word)" ng-repeat="word in displayedWords | orderBy: word.furthest : true | startsWithLetter:letterFilterKey track by $index">
                                     <td>{{word.word}}</td>
                                     <td>{{word.word.length}}</td>
                                     <td>{{word.furthest}}</td>
